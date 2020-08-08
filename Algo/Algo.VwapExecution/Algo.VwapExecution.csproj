@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E8C9A71D-18A4-4083-A5F0-1A4977670218}</ProjectGuid>
+    <ProjectGuid>{BB5FD39E-1DEA-455E-AF8C-DE3B74735843}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Algo.Common</RootNamespace>
-    <AssemblyName>Algo.Common</AssemblyName>
+    <RootNamespace>Algo.VwapExecution</RootNamespace>
+    <AssemblyName>Algo.VwapExecution</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,10 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Utilities.cs" />
-    <Compile Include="WaitHandleExtensions.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="ExecutionStrategy.cs" />
+    <Compile Include="MarketHoursToVolumeProfileIndexHelper.cs" />
+    <Compile Include="OrderSide.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VwapCalculator.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Lean\Common\QuantConnect.csproj">
+      <Project>{2545C0B4-FABB-49C9-8DD1-9AD7EE23F86B}</Project>
+      <Name>QuantConnect</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
